@@ -6,6 +6,7 @@ class Painel::SalesController < Painel::BaseController
 
   def new
     @sale = Sale.new
+    @sale.order_product.build
   end
 
   def create
@@ -29,7 +30,7 @@ class Painel::SalesController < Painel::BaseController
   private
 
     def sale_params
-      params.require(:sale).permit(:payment_id, :client_id, :price)
+      params.require(:sale).permit(:payment_id, :client_id, :price, product_ids: [])
     end
 
     def set_sale

@@ -1,5 +1,8 @@
 class Sale < ActiveRecord::Base
 
+  has_many :order_product
+  has_many :products, through: :order_product
+
   belongs_to :payment
 
   belongs_to :client, :foreign_key => "client_id", :class_name => "Client"

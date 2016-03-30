@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150614231223) do
+ActiveRecord::Schema.define(version: 20160330002803) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name",       null: false
@@ -33,6 +33,13 @@ ActiveRecord::Schema.define(version: 20150614231223) do
     t.boolean  "status",       default: true
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
+  end
+
+  create_table "order_products", force: :cascade do |t|
+    t.integer  "product_id"
+    t.integer  "sale_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "payments", force: :cascade do |t|
@@ -96,13 +103,5 @@ ActiveRecord::Schema.define(version: 20150614231223) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-
-  create_table "widgets", force: :cascade do |t|
-    t.string   "name"
-    t.text     "description"
-    t.integer  "stock"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
 end

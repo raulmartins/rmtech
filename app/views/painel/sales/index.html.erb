@@ -20,6 +20,7 @@
                 <th style="width: 50px;"  colspan="1" rowspan="1" aria-controls="example0" tabindex="0">ID</th>
                 <th style="width: 257px;" colspan="1" rowspan="1" aria-controls="example0" tabindex="0">Método de Pagamento</th>
                 <th style="width: 406px;" colspan="1" rowspan="1" aria-controls="example0" tabindex="0">Cliente</th>
+                <th style="width: 406px;" colspan="1" rowspan="1" aria-controls="example0" tabindex="0">Produtos</th>
                 <th style="width: 100px;" colspan="1" rowspan="1" aria-controls="example0" tabindex="0">Preço</th>
               </tr>
             </thead>
@@ -38,6 +39,11 @@
                   <td><%= p.id %></td>
                   <td><%= p.payment.name %></td>
                   <td><%= p.client.name %></td>
+                  <td>
+                    <% p.products.each do |p| %>
+                      <%= p.name %>
+                    <% end %>
+                  </td>
                   <td>R$ <%= number_with_precision(p.price, :precision => 2).to_s.gsub('.', ',') %></td>
                 </tr>
               <% end %>
