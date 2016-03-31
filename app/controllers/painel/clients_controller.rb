@@ -10,6 +10,9 @@ class Painel::ClientsController < Painel::BaseController
     @client = Client.new
   end
 
+
+
+
   def create
     @client = Client.new(client_params)
     respond_to do |f|
