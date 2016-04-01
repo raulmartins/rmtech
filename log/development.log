@@ -14799,3 +14799,1210 @@ Processing by Painel::DashboardController#index as HTML
   Rendered layouts/components/_header.html.erb (6.5ms)
   Rendered layouts/components/_footer.html.erb (22.8ms)
 Completed 200 OK in 54ms (Views: 48.3ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/" for ::1 at 2016-03-31 00:48:56 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Painel::DashboardController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36mSale Load (0.2ms)[0m  [1mSELECT  "sales".* FROM "sales"  ORDER BY id DESC LIMIT 10[0m
+  [1m[35m (0.2ms)[0m  SELECT SUM("sales"."price") FROM "sales" WHERE (created_at >= '2016-03-31')
+  [1m[36m (0.2ms)[0m  [1mSELECT SUM("sales"."price") FROM "sales" WHERE (created_at >= '2016-03-24 00:48:56.260175')[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "clients" LIMIT 10) subquery_for_count
+  [1m[36mPayment Load (0.2ms)[0m  [1mSELECT  "payments".* FROM "payments" WHERE "payments"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mClient Load (0.3ms)[0m  SELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mPayment Load (0.2ms)[0m  [1mSELECT  "payments".* FROM "payments" WHERE "payments"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mClient Load (0.3ms)[0m  [1mSELECT  "clients".* FROM "clients"  ORDER BY id DESC LIMIT 10[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories"
+  [1m[36mPayment Load (0.2ms)[0m  [1mSELECT "payments".* FROM "payments"[0m
+  [1m[35mClient Load (0.2ms)[0m  SELECT "clients".* FROM "clients"
+  Rendered painel/dashboard/index.html.erb within layouts/painel (106.3ms)
+  Rendered layouts/components/_header.html.erb (276.7ms)
+  Rendered layouts/components/_footer.html.erb (50.1ms)
+Completed 200 OK in 542ms (Views: 448.0ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/painel" for ::1 at 2016-03-31 00:48:59 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Painel::DashboardController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36mSale Load (0.2ms)[0m  [1mSELECT  "sales".* FROM "sales"  ORDER BY id DESC LIMIT 10[0m
+  [1m[35m (0.2ms)[0m  SELECT SUM("sales"."price") FROM "sales" WHERE (created_at >= '2016-03-31')
+  [1m[36m (0.2ms)[0m  [1mSELECT SUM("sales"."price") FROM "sales" WHERE (created_at >= '2016-03-24 00:48:59.582103')[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "clients" LIMIT 10) subquery_for_count
+  [1m[36mPayment Load (0.4ms)[0m  [1mSELECT  "payments".* FROM "payments" WHERE "payments"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mClient Load (0.3ms)[0m  SELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mPayment Load (0.2ms)[0m  [1mSELECT  "payments".* FROM "payments" WHERE "payments"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mClient Load (0.2ms)[0m  [1mSELECT  "clients".* FROM "clients"  ORDER BY id DESC LIMIT 10[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories"
+  [1m[36mPayment Load (0.2ms)[0m  [1mSELECT "payments".* FROM "payments"[0m
+  [1m[35mClient Load (0.2ms)[0m  SELECT "clients".* FROM "clients"
+  Rendered painel/dashboard/index.html.erb within layouts/painel (97.8ms)
+  Rendered layouts/components/_header.html.erb (268.9ms)
+  Rendered layouts/components/_footer.html.erb (62.5ms)
+Completed 200 OK in 531ms (Views: 442.1ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/painel/products" for ::1 at 2016-03-31 00:49:02 -0300
+Processing by Painel::ProductsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "products" WHERE (quantify > 0)
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products" WHERE (quantify > 0)[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 6]]
+  Rendered painel/products/index.html.erb within layouts/painel (5.1ms)
+  Rendered layouts/components/_header.html.erb (9.4ms)
+  Rendered layouts/components/_footer.html.erb (44.9ms)
+Completed 200 OK in 69ms (Views: 66.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/img/datatables/sort_asc.png" for ::1 at 2016-03-31 00:49:02 -0300
+
+
+Started GET "/img/datatables/sort_both.png" for ::1 at 2016-03-31 00:49:02 -0300
+
+ActionController::RoutingError (No route matches [GET] "/img/datatables/sort_asc.png"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  puma (3.2.0) lib/puma/configuration.rb:227:in `call'
+  puma (3.2.0) lib/puma/server.rb:561:in `handle_request'
+  puma (3.2.0) lib/puma/server.rb:406:in `process_client'
+  puma (3.2.0) lib/puma/server.rb:271:in `block in run'
+  puma (3.2.0) lib/puma/thread_pool.rb:111:in `call'
+  puma (3.2.0) lib/puma/thread_pool.rb:111:in `block in spawn_thread'
+
+
+
+ActionController::RoutingError (No route matches [GET] "/img/datatables/sort_both.png"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  puma (3.2.0) lib/puma/configuration.rb:227:in `call'
+  puma (3.2.0) lib/puma/server.rb:561:in `handle_request'
+  puma (3.2.0) lib/puma/server.rb:406:in `process_client'
+  puma (3.2.0) lib/puma/server.rb:271:in `block in run'
+  puma (3.2.0) lib/puma/thread_pool.rb:111:in `call'
+  puma (3.2.0) lib/puma/thread_pool.rb:111:in `block in spawn_thread'
+
+
+  Rendered /Users/raullima/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/raullima/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/raullima/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.3ms)
+  Rendered /Users/raullima/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.6ms)
+  Rendered /Users/raullima/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (29.6ms)
+  Rendered /Users/raullima/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (17.7ms)
+  Rendered /Users/raullima/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /Users/raullima/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /Users/raullima/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (196.8ms)
+  Rendered /Users/raullima/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (196.6ms)
+
+
+Started GET "/painel/clients" for ::1 at 2016-03-31 00:49:13 -0300
+Processing by Painel::ClientsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "clients"[0m
+  [1m[35mClient Load (0.2ms)[0m  SELECT "clients".* FROM "clients"
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "sales" WHERE "sales"."client_id" = ?[0m  [["client_id", 5]]
+  Rendered painel/clients/index.html.erb within layouts/painel (27.5ms)
+  Rendered layouts/components/_header.html.erb (17.8ms)
+  Rendered layouts/components/_footer.html.erb (43.6ms)
+Completed 200 OK in 98ms (Views: 95.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/img/datatables/sort_asc.png" for ::1 at 2016-03-31 00:49:13 -0300
+
+
+Started GET "/img/datatables/sort_both.png" for ::1 at 2016-03-31 00:49:13 -0300
+
+ActionController::RoutingError (No route matches [GET] "/img/datatables/sort_asc.png"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  puma (3.2.0) lib/puma/configuration.rb:227:in `call'
+  puma (3.2.0) lib/puma/server.rb:561:in `handle_request'
+  puma (3.2.0) lib/puma/server.rb:406:in `process_client'
+  puma (3.2.0) lib/puma/server.rb:271:in `block in run'
+  puma (3.2.0) lib/puma/thread_pool.rb:111:in `call'
+  puma (3.2.0) lib/puma/thread_pool.rb:111:in `block in spawn_thread'
+
+
+
+ActionController::RoutingError (No route matches [GET] "/img/datatables/sort_both.png"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  puma (3.2.0) lib/puma/configuration.rb:227:in `call'
+  puma (3.2.0) lib/puma/server.rb:561:in `handle_request'
+  puma (3.2.0) lib/puma/server.rb:406:in `process_client'
+  puma (3.2.0) lib/puma/server.rb:271:in `block in run'
+  puma (3.2.0) lib/puma/thread_pool.rb:111:in `call'
+  puma (3.2.0) lib/puma/thread_pool.rb:111:in `block in spawn_thread'
+
+
+  Rendered /Users/raullima/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /Users/raullima/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendered /Users/raullima/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (5.1ms)
+  Rendered /Users/raullima/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (5.8ms)
+  Rendered /Users/raullima/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.9ms)
+  Rendered /Users/raullima/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.7ms)
+  Rendered /Users/raullima/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/raullima/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (111.4ms)
+  Rendered /Users/raullima/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/raullima/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (116.4ms)
+
+
+Started GET "/painel/products/categories" for ::1 at 2016-03-31 00:49:19 -0300
+Processing by Painel::CategoriesController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "products" WHERE "products"."category_id" = ?  [["category_id", 6]]
+  Rendered painel/categories/index.html.erb within layouts/painel (6.3ms)
+  Rendered layouts/components/_header.html.erb (9.3ms)
+  Rendered layouts/components/_footer.html.erb (19.5ms)
+Completed 200 OK in 44ms (Views: 40.9ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/painel/products/categories" for ::1 at 2016-03-31 00:49:23 -0300
+Processing by Painel::CategoriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yCMxesZFsggdNq+U/VvulthJzYQol9cVGQj5jkrR2mdAaPVdnZmHF1p0tFWyMWAry5tcPNq9CfYcMkQY2XqE8A==", "category"=>{"name"=>"Casa"}, "commit"=>"Salvar"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mCategory Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = 'Casa' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Casa"], ["created_at", "2016-03-31 00:49:23.378956"], ["updated_at", "2016-03-31 00:49:23.378956"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/painel/products/categories
+Completed 302 Found in 66ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/painel/products/categories" for ::1 at 2016-03-31 00:49:23 -0300
+Processing by Painel::CategoriesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "products" WHERE "products"."category_id" = ?  [["category_id", 6]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "products" WHERE "products"."category_id" = ?[0m  [["category_id", 7]]
+  Rendered painel/categories/index.html.erb within layouts/painel (7.1ms)
+  Rendered layouts/components/_header.html.erb (9.3ms)
+  Rendered layouts/components/_footer.html.erb (30.2ms)
+Completed 200 OK in 57ms (Views: 53.8ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/painel/products/categories" for ::1 at 2016-03-31 00:49:49 -0300
+Processing by Painel::CategoriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jlQu3ky9YkoRTH9nGhQxL/4xBcQyaLs4r9Hn8Dv4ObQGH+r5F2FXVVYOZKZVfr+S7eOUfMBCZduq61pmqFNnIw==", "category"=>{"name"=>"Ponto Comercial"}, "commit"=>"Salvar"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mCategory Exists (0.2ms)[0m  SELECT  1 AS one FROM "categories" WHERE "categories"."name" = 'Ponto Comercial' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Ponto Comercial"], ["created_at", "2016-03-31 00:49:49.459966"], ["updated_at", "2016-03-31 00:49:49.459966"]]
+  [1m[35m (5.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/painel/products/categories
+Completed 302 Found in 13ms (ActiveRecord: 6.3ms)
+
+
+Started GET "/painel/products/categories" for ::1 at 2016-03-31 00:49:49 -0300
+Processing by Painel::CategoriesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "products" WHERE "products"."category_id" = ?[0m  [["category_id", 6]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "products" WHERE "products"."category_id" = ?  [["category_id", 7]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "products" WHERE "products"."category_id" = ?[0m  [["category_id", 8]]
+  Rendered painel/categories/index.html.erb within layouts/painel (4.5ms)
+  Rendered layouts/components/_header.html.erb (9.3ms)
+  Rendered layouts/components/_footer.html.erb (19.9ms)
+Completed 200 OK in 42ms (Views: 40.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/painel/products/new" for ::1 at 2016-03-31 00:49:53 -0300
+Processing by Painel::ProductsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered painel/products/new.html.erb within layouts/painel (4.3ms)
+  Rendered layouts/components/_header.html.erb (7.6ms)
+  Rendered layouts/components/_footer.html.erb (21.4ms)
+Completed 200 OK in 42ms (Views: 39.3ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/painel/products" for ::1 at 2016-03-31 00:50:29 -0300
+Processing by Painel::ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/1nkfo0/jK87MUtqLBG7KU02yFvyGzGIiFL9D7i7nPt3EiBZ1uO5sHxzUKtjezWUXuRZ4wAx72uNaECZKxDCbA==", "product"=>{"sku"=>"123", "name"=>"Casa da Rua Mal-me-Quer", "category_id"=>"7", "price"=>"2000", "quantify"=>"1"}, "commit"=>"Salvar"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mProduct Exists (0.2ms)[0m  SELECT  1 AS one FROM "products" WHERE "products"."sku" = '123' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "products" ("sku", "name", "price", "quantify", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["sku", "123"], ["name", "Casa da Rua Mal-me-Quer"], ["price", 2000.0], ["quantify", 1], ["category_id", 7], ["created_at", "2016-03-31 00:50:29.310609"], ["updated_at", "2016-03-31 00:50:29.310609"]]
+  [1m[35m (1.2ms)[0m  commit transaction
+Redirected to http://localhost:3000/painel/products
+Completed 302 Found in 9ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/painel/products" for ::1 at 2016-03-31 00:50:29 -0300
+Processing by Painel::ProductsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "products" WHERE (quantify > 0)
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products" WHERE (quantify > 0)[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mCategory Load (0.2ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 7]]
+  Rendered painel/products/index.html.erb within layouts/painel (5.5ms)
+  Rendered layouts/components/_header.html.erb (7.2ms)
+  Rendered layouts/components/_footer.html.erb (21.3ms)
+Completed 200 OK in 42ms (Views: 39.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/img/datatables/sort_asc.png" for ::1 at 2016-03-31 00:50:29 -0300
+
+
+Started GET "/img/datatables/sort_both.png" for ::1 at 2016-03-31 00:50:29 -0300
+
+ActionController::RoutingError (No route matches [GET] "/img/datatables/sort_asc.png"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  puma (3.2.0) lib/puma/configuration.rb:227:in `call'
+  puma (3.2.0) lib/puma/server.rb:561:in `handle_request'
+  puma (3.2.0) lib/puma/server.rb:406:in `process_client'
+  puma (3.2.0) lib/puma/server.rb:271:in `block in run'
+  puma (3.2.0) lib/puma/thread_pool.rb:111:in `call'
+  puma (3.2.0) lib/puma/thread_pool.rb:111:in `block in spawn_thread'
+
+
+
+ActionController::RoutingError (No route matches [GET] "/img/datatables/sort_both.png"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  puma (3.2.0) lib/puma/configuration.rb:227:in `call'
+  puma (3.2.0) lib/puma/server.rb:561:in `handle_request'
+  puma (3.2.0) lib/puma/server.rb:406:in `process_client'
+  puma (3.2.0) lib/puma/server.rb:271:in `block in run'
+  puma (3.2.0) lib/puma/thread_pool.rb:111:in `call'
+  puma (3.2.0) lib/puma/thread_pool.rb:111:in `block in spawn_thread'
+
+
+  Rendered /Users/raullima/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/raullima/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendered /Users/raullima/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.6ms)
+  Rendered /Users/raullima/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.5ms)
+  Rendered /Users/raullima/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (6.7ms)
+  Rendered /Users/raullima/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/raullima/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (106.1ms)
+  Rendered /Users/raullima/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.5ms)
+  Rendered /Users/raullima/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /Users/raullima/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (116.0ms)
+
+
+Started GET "/painel/clients" for ::1 at 2016-03-31 00:50:50 -0300
+Processing by Painel::ClientsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "clients"
+  [1m[36mClient Load (0.2ms)[0m  [1mSELECT "clients".* FROM "clients"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "sales" WHERE "sales"."client_id" = ?  [["client_id", 5]]
+  Rendered painel/clients/index.html.erb within layouts/painel (2.5ms)
+  Rendered layouts/components/_header.html.erb (7.5ms)
+  Rendered layouts/components/_footer.html.erb (25.9ms)
+Completed 200 OK in 44ms (Views: 41.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/img/datatables/sort_asc.png" for ::1 at 2016-03-31 00:50:50 -0300
+
+
+Started GET "/img/datatables/sort_both.png" for ::1 at 2016-03-31 00:50:50 -0300
+
+ActionController::RoutingError (No route matches [GET] "/img/datatables/sort_asc.png"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  puma (3.2.0) lib/puma/configuration.rb:227:in `call'
+  puma (3.2.0) lib/puma/server.rb:561:in `handle_request'
+  puma (3.2.0) lib/puma/server.rb:406:in `process_client'
+  puma (3.2.0) lib/puma/server.rb:271:in `block in run'
+  puma (3.2.0) lib/puma/thread_pool.rb:111:in `call'
+  puma (3.2.0) lib/puma/thread_pool.rb:111:in `block in spawn_thread'
+
+
+
+ActionController::RoutingError (No route matches [GET] "/img/datatables/sort_both.png"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  puma (3.2.0) lib/puma/configuration.rb:227:in `call'
+  puma (3.2.0) lib/puma/server.rb:561:in `handle_request'
+  puma (3.2.0) lib/puma/server.rb:406:in `process_client'
+  puma (3.2.0) lib/puma/server.rb:271:in `block in run'
+  puma (3.2.0) lib/puma/thread_pool.rb:111:in `call'
+  puma (3.2.0) lib/puma/thread_pool.rb:111:in `block in spawn_thread'
+
+
+  Rendered /Users/raullima/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /Users/raullima/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /Users/raullima/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (5.0ms)
+  Rendered /Users/raullima/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (7.1ms)
+  Rendered /Users/raullima/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.8ms)
+  Rendered /Users/raullima/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.2ms)
+  Rendered /Users/raullima/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /Users/raullima/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (104.1ms)
+  Rendered /Users/raullima/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/raullima/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (117.2ms)
+
+
+Started GET "/painel/clients/new" for ::1 at 2016-03-31 00:50:55 -0300
+Processing by Painel::ClientsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  Rendered painel/clients/new.html.erb within layouts/painel (6.7ms)
+  Rendered layouts/components/_header.html.erb (6.0ms)
+  Rendered layouts/components/_footer.html.erb (21.8ms)
+Completed 200 OK in 44ms (Views: 41.5ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/painel/clients" for ::1 at 2016-03-31 00:51:40 -0300
+Processing by Painel::ClientsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XuvjR9zdjXtQt1H7t66Lls/+Uv7+RKNVU2Rn/3bRGQbWoCdghwG4ZBf1Sjr4xAUr3CzDRgxufbZWXtpp5XpHkQ==", "client"=>{"name"=>"Dudu Ladrão", "cellphone"=>"(12) 4445-5533", "telephone"=>"(32) 4141-4444", "email"=>"dudu@ladrao.com", "CEP"=>"31354-123", "address_line"=>"1dada", "number"=>"2", "district"=>"dddddd", "city"=>"ddd", "state"=>"ce", "status"=>"true"}, "commit"=>"Salvar"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "clients" ("name", "telephone", "cellphone", "email", "CEP", "address_line", "number", "district", "city", "state", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Dudu Ladrão"], ["telephone", "(32) 4141-4444"], ["cellphone", "(12) 4445-5533"], ["email", "dudu@ladrao.com"], ["CEP", "31354-123"], ["address_line", "1dada"], ["number", "2"], ["district", "dddddd"], ["city", "ddd"], ["state", "ce"], ["created_at", "2016-03-31 00:51:40.317329"], ["updated_at", "2016-03-31 00:51:40.317329"]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/painel/clients
+Completed 302 Found in 10ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/painel/clients" for ::1 at 2016-03-31 00:51:40 -0300
+Processing by Painel::ClientsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "clients"[0m
+  [1m[35mClient Load (0.1ms)[0m  SELECT "clients".* FROM "clients"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "sales" WHERE "sales"."client_id" = ?[0m  [["client_id", 5]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "sales" WHERE "sales"."client_id" = ?  [["client_id", 6]]
+  Rendered painel/clients/index.html.erb within layouts/painel (3.5ms)
+  Rendered layouts/components/_header.html.erb (9.7ms)
+  Rendered layouts/components/_footer.html.erb (23.2ms)
+Completed 200 OK in 44ms (Views: 41.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/img/datatables/sort_asc.png" for ::1 at 2016-03-31 00:51:40 -0300
+
+
+Started GET "/img/datatables/sort_both.png" for ::1 at 2016-03-31 00:51:40 -0300
+
+ActionController::RoutingError (No route matches [GET] "/img/datatables/sort_asc.png"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  puma (3.2.0) lib/puma/configuration.rb:227:in `call'
+  puma (3.2.0) lib/puma/server.rb:561:in `handle_request'
+  puma (3.2.0) lib/puma/server.rb:406:in `process_client'
+  puma (3.2.0) lib/puma/server.rb:271:in `block in run'
+  puma (3.2.0) lib/puma/thread_pool.rb:111:in `call'
+  puma (3.2.0) lib/puma/thread_pool.rb:111:in `block in spawn_thread'
+
+
+
+ActionController::RoutingError (No route matches [GET] "/img/datatables/sort_both.png"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  puma (3.2.0) lib/puma/configuration.rb:227:in `call'
+  puma (3.2.0) lib/puma/server.rb:561:in `handle_request'
+  puma (3.2.0) lib/puma/server.rb:406:in `process_client'
+  puma (3.2.0) lib/puma/server.rb:271:in `block in run'
+  puma (3.2.0) lib/puma/thread_pool.rb:111:in `call'
+  puma (3.2.0) lib/puma/thread_pool.rb:111:in `block in spawn_thread'
+
+
+  Rendered /Users/raullima/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/raullima/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/raullima/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (6.4ms)
+  Rendered /Users/raullima/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.6ms)
+  Rendered /Users/raullima/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.8ms)
+  Rendered /Users/raullima/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.7ms)
+  Rendered /Users/raullima/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/raullima/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (110.8ms)
+  Rendered /Users/raullima/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/raullima/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (100.7ms)
+
+
+Started GET "/painel/sales/new" for ::1 at 2016-03-31 00:51:45 -0300
+Processing by Painel::SalesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mPayment Load (0.2ms)[0m  SELECT "payments".* FROM "payments"
+  [1m[36mClient Load (0.2ms)[0m  [1mSELECT "clients".* FROM "clients"[0m
+  [1m[35mProduct Load (0.5ms)[0m  SELECT "products".* FROM "products"
+  Rendered painel/sales/new.html.erb within layouts/painel (28.7ms)
+  Rendered layouts/components/_header.html.erb (6.9ms)
+  Rendered layouts/components/_footer.html.erb (17.6ms)
+Completed 200 OK in 72ms (Views: 58.6ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/painel/sales" for ::1 at 2016-03-31 00:52:00 -0300
+Processing by Painel::SalesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZnvriDG8Mjiu7HPAoNRc08lGZIBF0Ydh60P4rMF5D7TuMC+vamAHJ+muaAHvvtJu2pT1OLf7WYLueUU6UtJRIw==", "sale"=>{"payment_id"=>"2", "client_id"=>"6", "product_ids"=>["9"], "price"=>"2000"}, "commit"=>"Salvar"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mProduct Load (0.2ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 9]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mProduct Exists (0.2ms)[0m  SELECT  1 AS one FROM "products" WHERE ("products"."sku" = '123' AND "products"."id" != 9) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "sales" ("payment_id", "client_id", "price", "employee_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["payment_id", 2], ["client_id", 6], ["price", 2000.0], ["employee_id", 3], ["created_at", "2016-03-31 00:52:00.057556"], ["updated_at", "2016-03-31 00:52:00.057556"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "order_products" ("product_id", "sale_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["product_id", 9], ["sale_id", 15], ["created_at", "2016-03-31 00:52:00.059872"], ["updated_at", "2016-03-31 00:52:00.059872"]]
+  [1m[36m (5.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/painel/sales
+Completed 302 Found in 18ms (ActiveRecord: 7.0ms)
+
+
+Started GET "/painel/sales" for ::1 at 2016-03-31 00:52:00 -0300
+Processing by Painel::SalesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "sales"[0m
+  [1m[35mSale Load (0.1ms)[0m  SELECT "sales".* FROM "sales"
+  [1m[36mPayment Load (0.1ms)[0m  [1mSELECT  "payments".* FROM "payments" WHERE "payments"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mClient Load (0.1ms)[0m  SELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products" INNER JOIN "order_products" ON "products"."id" = "order_products"."product_id" WHERE "order_products"."sale_id" = ?[0m  [["sale_id", 13]]
+  [1m[35mPayment Load (0.1ms)[0m  SELECT  "payments".* FROM "payments" WHERE "payments"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" INNER JOIN "order_products" ON "products"."id" = "order_products"."product_id" WHERE "order_products"."sale_id" = ?  [["sale_id", 14]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "payments".* FROM "payments" WHERE "payments"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mClient Load (0.2ms)[0m  SELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products" INNER JOIN "order_products" ON "products"."id" = "order_products"."product_id" WHERE "order_products"."sale_id" = ?[0m  [["sale_id", 15]]
+  Rendered painel/sales/index.html.erb within layouts/painel (10.7ms)
+  Rendered layouts/components/_header.html.erb (6.6ms)
+  Rendered layouts/components/_footer.html.erb (17.1ms)
+Completed 200 OK in 45ms (Views: 41.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/img/datatables/sort_both.png" for ::1 at 2016-03-31 00:52:00 -0300
+
+ActionController::RoutingError (No route matches [GET] "/img/datatables/sort_both.png"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  puma (3.2.0) lib/puma/configuration.rb:227:in `call'
+  puma (3.2.0) lib/puma/server.rb:561:in `handle_request'
+  puma (3.2.0) lib/puma/server.rb:406:in `process_client'
+  puma (3.2.0) lib/puma/server.rb:271:in `block in run'
+  puma (3.2.0) lib/puma/thread_pool.rb:111:in `call'
+  puma (3.2.0) lib/puma/thread_pool.rb:111:in `block in spawn_thread'
+
+
+
+
+Started GET "/img/datatables/sort_asc.png" for ::1 at 2016-03-31 00:52:00 -0300
+
+ActionController::RoutingError (No route matches [GET] "/img/datatables/sort_asc.png"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  puma (3.2.0) lib/puma/configuration.rb:227:in `call'
+  puma (3.2.0) lib/puma/server.rb:561:in `handle_request'
+  puma (3.2.0) lib/puma/server.rb:406:in `process_client'
+  puma (3.2.0) lib/puma/server.rb:271:in `block in run'
+  puma (3.2.0) lib/puma/thread_pool.rb:111:in `call'
+  puma (3.2.0) lib/puma/thread_pool.rb:111:in `block in spawn_thread'
+
+
+  Rendered /Users/raullima/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/raullima/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/raullima/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.2ms)
+  Rendered /Users/raullima/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (5.1ms)
+  Rendered /Users/raullima/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.4ms)
+  Rendered /Users/raullima/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.4ms)
+  Rendered /Users/raullima/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/raullima/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (101.3ms)
+  Rendered /Users/raullima/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/raullima/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (104.3ms)
+
+
+Started GET "/painel" for ::1 at 2016-03-31 00:52:02 -0300
+Processing by Painel::DashboardController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36mSale Load (0.2ms)[0m  [1mSELECT  "sales".* FROM "sales"  ORDER BY id DESC LIMIT 10[0m
+  [1m[35m (0.1ms)[0m  SELECT SUM("sales"."price") FROM "sales" WHERE (created_at >= '2016-03-31')
+  [1m[36m (0.2ms)[0m  [1mSELECT SUM("sales"."price") FROM "sales" WHERE (created_at >= '2016-03-24 00:52:02.211221')[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "clients" LIMIT 10) subquery_for_count
+  [1m[36mPayment Load (0.2ms)[0m  [1mSELECT  "payments".* FROM "payments" WHERE "payments"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mClient Load (0.1ms)[0m  SELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mPayment Load (0.1ms)[0m  [1mSELECT  "payments".* FROM "payments" WHERE "payments"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mClient Load (0.1ms)[0m  SELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "payments".* FROM "payments" WHERE "payments"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mClient Load (0.2ms)[0m  [1mSELECT  "clients".* FROM "clients"  ORDER BY id DESC LIMIT 10[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories"
+  [1m[36mPayment Load (0.1ms)[0m  [1mSELECT "payments".* FROM "payments"[0m
+  [1m[35mClient Load (0.1ms)[0m  SELECT "clients".* FROM "clients"
+  Rendered painel/dashboard/index.html.erb within layouts/painel (19.4ms)
+  Rendered layouts/components/_header.html.erb (9.8ms)
+  Rendered layouts/components/_footer.html.erb (23.9ms)
+Completed 200 OK in 63ms (Views: 57.2ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/painel/sales" for ::1 at 2016-03-31 00:52:22 -0300
+Processing by Painel::SalesController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kqbuSdBY00dt8HcCDS1tEX7m0LOV+hu1imvr3LfAQKYa7Spui4TmWCqybMNCR+OsbTRBC2fQxVaPUVZKJGseMQ==", "sale"=>{"payment_id"=>"5", "client_id"=>"5", "price"=>"2000"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "sales" ("payment_id", "client_id", "price", "employee_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["payment_id", 5], ["client_id", 5], ["price", 2000.0], ["employee_id", 3], ["created_at", "2016-03-31 00:52:22.975951"], ["updated_at", "2016-03-31 00:52:22.975951"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+Completed 200 OK in 10ms (Views: 0.6ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/painel/sales" for ::1 at 2016-03-31 00:52:42 -0300
+Processing by Painel::SalesController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kqbuSdBY00dt8HcCDS1tEX7m0LOV+hu1imvr3LfAQKYa7Spui4TmWCqybMNCR+OsbTRBC2fQxVaPUVZKJGseMQ==", "sale"=>{"payment_id"=>"6", "client_id"=>"5", "price"=>"2000"}}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "sales" ("payment_id", "client_id", "price", "employee_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["payment_id", 6], ["client_id", 5], ["price", 2000.0], ["employee_id", 3], ["created_at", "2016-03-31 00:52:42.903273"], ["updated_at", "2016-03-31 00:52:42.903273"]]
+  [1m[35m (5.7ms)[0m  commit transaction
+Completed 200 OK in 13ms (Views: 0.6ms | ActiveRecord: 6.9ms)
+
+
+Started POST "/painel/sales" for ::1 at 2016-03-31 00:53:07 -0300
+Processing by Painel::SalesController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kqbuSdBY00dt8HcCDS1tEX7m0LOV+hu1imvr3LfAQKYa7Spui4TmWCqybMNCR+OsbTRBC2fQxVaPUVZKJGseMQ==", "sale"=>{"payment_id"=>"6", "client_id"=>"6", "price"=>"2000"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "sales" ("payment_id", "client_id", "price", "employee_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["payment_id", 6], ["client_id", 6], ["price", 2000.0], ["employee_id", 3], ["created_at", "2016-03-31 00:53:07.376056"], ["updated_at", "2016-03-31 00:53:07.376056"]]
+  [1m[35m (5.7ms)[0m  commit transaction
+Completed 200 OK in 12ms (Views: 0.9ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/painel" for ::1 at 2016-03-31 00:53:12 -0300
+Processing by Painel::DashboardController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mSale Load (0.4ms)[0m  SELECT  "sales".* FROM "sales"  ORDER BY id DESC LIMIT 10
+  [1m[36m (0.2ms)[0m  [1mSELECT SUM("sales"."price") FROM "sales" WHERE (created_at >= '2016-03-31')[0m
+  [1m[35m (0.2ms)[0m  SELECT SUM("sales"."price") FROM "sales" WHERE (created_at >= '2016-03-24 00:53:12.190533')
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "clients" LIMIT 10) subquery_for_count[0m
+  [1m[35mPayment Load (0.1ms)[0m  SELECT  "payments".* FROM "payments" WHERE "payments"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mClient Load (0.1ms)[0m  [1mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "payments".* FROM "payments" WHERE "payments"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mClient Load (0.1ms)[0m  [1mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mPayment Load (0.1ms)[0m  SELECT  "payments".* FROM "payments" WHERE "payments"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mPayment Load (0.1ms)[0m  SELECT  "payments".* FROM "payments" WHERE "payments"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "payments".* FROM "payments" WHERE "payments"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "payments".* FROM "payments" WHERE "payments"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mClient Load (0.2ms)[0m  SELECT  "clients".* FROM "clients"  ORDER BY id DESC LIMIT 10
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  [1m[35mPayment Load (0.2ms)[0m  SELECT "payments".* FROM "payments"
+  [1m[36mClient Load (0.3ms)[0m  [1mSELECT "clients".* FROM "clients"[0m
+  Rendered painel/dashboard/index.html.erb within layouts/painel (21.2ms)
+  Rendered layouts/components/_header.html.erb (7.8ms)
+  Rendered layouts/components/_footer.html.erb (22.9ms)
+Completed 200 OK in 66ms (Views: 57.2ms | ActiveRecord: 2.6ms)
+
+
+Started POST "/painel/sales" for ::1 at 2016-03-31 00:53:39 -0300
+Processing by Painel::SalesController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GamcvkSvI9we5E+oDs1oa78nmbHow2WYeEhj7XxqxJiR4liZH3MWw1mmVGlBp+bWrPUICRrpu3t9ct5778GaDw==", "sale"=>{"payment_id"=>"2", "client_id"=>"6", "price"=>"5000"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "sales" ("payment_id", "client_id", "price", "employee_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["payment_id", 2], ["client_id", 6], ["price", 5000.0], ["employee_id", 3], ["created_at", "2016-03-31 00:53:39.591486"], ["updated_at", "2016-03-31 00:53:39.591486"]]
+  [1m[35m (5.8ms)[0m  commit transaction
+Completed 200 OK in 12ms (Views: 0.5ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/painel" for ::1 at 2016-03-31 00:53:42 -0300
+Processing by Painel::DashboardController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mSale Load (0.2ms)[0m  SELECT  "sales".* FROM "sales"  ORDER BY id DESC LIMIT 10
+  [1m[36m (0.1ms)[0m  [1mSELECT SUM("sales"."price") FROM "sales" WHERE (created_at >= '2016-03-31')[0m
+  [1m[35m (0.2ms)[0m  SELECT SUM("sales"."price") FROM "sales" WHERE (created_at >= '2016-03-24 00:53:42.767207')
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "clients" LIMIT 10) subquery_for_count[0m
+  [1m[35mPayment Load (0.1ms)[0m  SELECT  "payments".* FROM "payments" WHERE "payments"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mClient Load (0.1ms)[0m  [1mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mPayment Load (0.1ms)[0m  SELECT  "payments".* FROM "payments" WHERE "payments"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "payments".* FROM "payments" WHERE "payments"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mClient Load (0.1ms)[0m  [1mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mPayment Load (0.1ms)[0m  SELECT  "payments".* FROM "payments" WHERE "payments"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "payments".* FROM "payments" WHERE "payments"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "payments".* FROM "payments" WHERE "payments"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "payments".* FROM "payments" WHERE "payments"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mClient Load (0.2ms)[0m  SELECT  "clients".* FROM "clients"  ORDER BY id DESC LIMIT 10
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  [1m[35mPayment Load (0.2ms)[0m  SELECT "payments".* FROM "payments"
+  [1m[36mClient Load (0.2ms)[0m  [1mSELECT "clients".* FROM "clients"[0m
+  Rendered painel/dashboard/index.html.erb within layouts/painel (22.1ms)
+  Rendered layouts/components/_header.html.erb (8.7ms)
+  Rendered layouts/components/_footer.html.erb (21.1ms)
+Completed 200 OK in 62ms (Views: 56.8ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/painel/clients/new" for ::1 at 2016-03-31 00:54:05 -0300
+Processing by Painel::ClientsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  Rendered painel/clients/new.html.erb within layouts/painel (2.9ms)
+  Rendered layouts/components/_header.html.erb (8.1ms)
+  Rendered layouts/components/_footer.html.erb (24.8ms)
+Completed 200 OK in 45ms (Views: 42.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/painel" for ::1 at 2016-03-31 00:54:08 -0300
+Processing by Painel::DashboardController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mSale Load (0.2ms)[0m  SELECT  "sales".* FROM "sales"  ORDER BY id DESC LIMIT 10
+  [1m[36m (0.2ms)[0m  [1mSELECT SUM("sales"."price") FROM "sales" WHERE (created_at >= '2016-03-31')[0m
+  [1m[35m (0.1ms)[0m  SELECT SUM("sales"."price") FROM "sales" WHERE (created_at >= '2016-03-24 00:54:08.261440')
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "clients" LIMIT 10) subquery_for_count[0m
+  [1m[35mPayment Load (0.1ms)[0m  SELECT  "payments".* FROM "payments" WHERE "payments"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mClient Load (0.1ms)[0m  [1mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mPayment Load (0.1ms)[0m  SELECT  "payments".* FROM "payments" WHERE "payments"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "payments".* FROM "payments" WHERE "payments"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mClient Load (0.1ms)[0m  [1mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mPayment Load (0.1ms)[0m  SELECT  "payments".* FROM "payments" WHERE "payments"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "payments".* FROM "payments" WHERE "payments"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "payments".* FROM "payments" WHERE "payments"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "payments".* FROM "payments" WHERE "payments"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mClient Load (0.2ms)[0m  SELECT  "clients".* FROM "clients"  ORDER BY id DESC LIMIT 10
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  [1m[35mPayment Load (0.2ms)[0m  SELECT "payments".* FROM "payments"
+  [1m[36mClient Load (0.4ms)[0m  [1mSELECT "clients".* FROM "clients"[0m
+  Rendered painel/dashboard/index.html.erb within layouts/painel (23.6ms)
+  Rendered layouts/components/_header.html.erb (10.7ms)
+  Rendered layouts/components/_footer.html.erb (22.6ms)
+Completed 200 OK in 68ms (Views: 61.9ms | ActiveRecord: 2.3ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_products_on_category_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_products_on_category_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_sales_on_employee_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_sales_on_employee_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_sales_on_client_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_sales_on_client_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_sales_on_payment_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_sales_on_payment_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+
+
+Started GET "/" for ::1 at 2016-04-01 14:23:54 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Painel::DashboardController#index as HTML
+Completed 401 Unauthorized in 16ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2016-04-01 14:23:54 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/sessions/new.html.erb within layouts/application (16.9ms)
+Completed 200 OK in 544ms (Views: 519.8ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/login" for ::1 at 2016-04-01 14:24:23 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mpa0gyY3a0XmCO2eFvab5zjf2P56+iqu1nRKI0ABP6Rj1d76TVuFoOl6CMU9AUhjSBEP0YPWCf+XOvSCwOGnvw==", "user"=>{"email"=>"raul@msn.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Logar"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "raul@msn.com"]]
+Completed 401 Unauthorized in 30ms (ActiveRecord: 0.8ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mpa0gyY3a0XmCO2eFvab5zjf2P56+iqu1nRKI0ABP6Rj1d76TVuFoOl6CMU9AUhjSBEP0YPWCf+XOvSCwOGnvw==", "user"=>{"email"=>"raul@msn.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Logar"}
+  Rendered devise/sessions/new.html.erb within layouts/application (18.9ms)
+Completed 200 OK in 500ms (Views: 383.7ms | ActiveRecord: 0.0ms)
+  [1m[36mUser Load (1.9ms)[0m  [1mSELECT "users".* FROM "users"[0m
+
+
+Started GET "/login" for ::1 at 2016-04-01 14:25:42 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/sessions/new.html.erb within layouts/application (16.6ms)
+Completed 200 OK in 413ms (Views: 376.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/login" for ::1 at 2016-04-01 14:26:32 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/sessions/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 35ms (Views: 34.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2016-04-01 14:27:47 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/sessions/new.html.erb within layouts/application (18.5ms)
+Completed 200 OK in 423ms (Views: 383.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/login" for ::1 at 2016-04-01 14:28:31 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/sessions/new.html.erb within layouts/application (17.6ms)
+Completed 200 OK in 421ms (Views: 382.8ms | ActiveRecord: 0.7ms)
+  [1m[36mUser Load (2.0ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'josepaulo@rmtech.com.br' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "users" ("name", "email", "encrypted_password", "level", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "Jose Paulo"], ["email", "josepaulo@rmtech.com.br"], ["encrypted_password", "$2a$10$8hn3A/NA0ZYYipRwUQlxKOCF0x4ZRAFxegFPG2sYzgq/TOH3hbVRy"], ["level", 1], ["created_at", "2016-04-01 14:30:44.181755"], ["updated_at", "2016-04-01 14:30:44.181755"]]
+  [1m[36m (1.7ms)[0m  [1mcommit transaction[0m
+
+
+Started POST "/login" for ::1 at 2016-04-01 14:31:02 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wEqiMuH8E5nzkly+LS6Rcq9dCd3MK8ohzrPsYIw3VNQ5CchLipD9fPzgueUG2UL235Pe8jUH6XCP/VLBDNfMzw==", "user"=>{"email"=>"josepaulo@rmtech.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Logar"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "josepaulo@rmtech.com"]]
+Completed 401 Unauthorized in 29ms (ActiveRecord: 1.3ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wEqiMuH8E5nzkly+LS6Rcq9dCd3MK8ohzrPsYIw3VNQ5CchLipD9fPzgueUG2UL235Pe8jUH6XCP/VLBDNfMzw==", "user"=>{"email"=>"josepaulo@rmtech.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Logar"}
+  Rendered devise/sessions/new.html.erb within layouts/application (20.2ms)
+Completed 200 OK in 472ms (Views: 365.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2016-04-01 14:31:12 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AwdAY9cwf3XxZWFuUohqBdbOJEP8W2on1aqzBC/wIP36RCoavFyRkP4XhDV5f7mBpgDzbAV3SXaU5A2lrxC45g==", "user"=>{"email"=>"josepaulo@rmtech.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Logar"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["email", "josepaulo@rmtech.com"]]
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.2ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AwdAY9cwf3XxZWFuUohqBdbOJEP8W2on1aqzBC/wIP36RCoavFyRkP4XhDV5f7mBpgDzbAV3SXaU5A2lrxC45g==", "user"=>{"email"=>"josepaulo@rmtech.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Logar"}
+  Rendered devise/sessions/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 107ms (Views: 31.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2016-04-01 14:31:31 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IVgmfaEZGZ574IlFSmsqlG7lMjTO5WvhZNPGBOmvlRrYG0wEynX3e3SSbB5hnPkQHivlGzfJSLAlnXilaU8NAQ==", "user"=>{"email"=>"josepaulo@rmtech.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Logar"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "josepaulo@rmtech.com"]]
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.1ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IVgmfaEZGZ574IlFSmsqlG7lMjTO5WvhZNPGBOmvlRrYG0wEynX3e3SSbB5hnPkQHivlGzfJSLAlnXilaU8NAQ==", "user"=>{"email"=>"josepaulo@rmtech.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Logar"}
+  Rendered devise/sessions/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 106ms (Views: 29.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2016-04-01 14:31:49 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZpmTZhmTFAQ+nNKYfFF2g9GgkEYU7r7Wdi/YA/LcfiOf2vkfcv/64THuN8NXpqUHoW5Hae3CnYc3YWaicjzmOA==", "user"=>{"email"=>"raul@sosbebidas.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Logar"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["email", "raul@sosbebidas.com"]]
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.1ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZpmTZhmTFAQ+nNKYfFF2g9GgkEYU7r7Wdi/YA/LcfiOf2vkfcv/64THuN8NXpqUHoW5Hae3CnYc3YWaicjzmOA==", "user"=>{"email"=>"raul@sosbebidas.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Logar"}
+  Rendered devise/sessions/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 125ms (Views: 49.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2016-04-01 14:32:01 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OkVHtidKb9Yu9fTArBtUp0XKVIaGNRPITDpOISpMRUPDBi3PTCaBMyGHEZuH7IcjNQSDqX8ZMJkNdPCAqqzdWA==", "user"=>{"email"=>"raul@sosbebidas.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Logar"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "raul@sosbebidas.com"]]
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.1ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OkVHtidKb9Yu9fTArBtUp0XKVIaGNRPITDpOISpMRUPDBi3PTCaBMyGHEZuH7IcjNQSDqX8ZMJkNdPCAqqzdWA==", "user"=>{"email"=>"raul@sosbebidas.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Logar"}
+  Rendered devise/sessions/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 108ms (Views: 30.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2016-04-01 14:32:09 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9YaFGs1c1qoN+FbKekEwNESc0RYnA5eXtb6sqZQ0rKkMxe9jpjA4TwKKs5FRtuOwNFIGOd4vtMb08BIIFNQ0sg==", "user"=>{"email"=>"raulmartins@sosbebidas.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Logar"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["email", "raulmartins@sosbebidas.com"]]
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.2ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9YaFGs1c1qoN+FbKekEwNESc0RYnA5eXtb6sqZQ0rKkMxe9jpjA4TwKKs5FRtuOwNFIGOd4vtMb08BIIFNQ0sg==", "user"=>{"email"=>"raulmartins@sosbebidas.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Logar"}
+  Rendered devise/sessions/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 107ms (Views: 30.9ms | ActiveRecord: 0.0ms)
+  [1m[36mUser Load (1.9ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."name" = ?  [["name", "Jose Paulo"]]
+
+
+Started POST "/login" for ::1 at 2016-04-01 14:33:41 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"L+/YN4rsOlGZx2XhOOyHDxFkVElIU1jTPSs/4QVdEFPWrLJO4YDUtJa1gLoTG1SLYaqDZrF/e4J8ZYFAhb2ISA==", "user"=>{"email"=>"josepaulo@rmtech.com.br", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Logar"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "josepaulo@rmtech.com.br"]]
+Completed 401 Unauthorized in 132ms (ActiveRecord: 1.0ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"L+/YN4rsOlGZx2XhOOyHDxFkVElIU1jTPSs/4QVdEFPWrLJO4YDUtJa1gLoTG1SLYaqDZrF/e4J8ZYFAhb2ISA==", "user"=>{"email"=>"josepaulo@rmtech.com.br", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Logar"}
+  Rendered devise/sessions/new.html.erb within layouts/application (18.6ms)
+Completed 200 OK in 453ms (Views: 369.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2016-04-01 14:33:48 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ODEbf5aokRMTqNk8tacE5IW93Z6QbkIsTUCr06plRKvBcnEG/cR/9hzaPGeeUNdg9XMKsWlCYX0MDhVyKoXcsA==", "user"=>{"email"=>"josepaulo@rmtech.com.br", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Logar"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["email", "josepaulo@rmtech.com.br"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "last_sign_in_ip" = ?, "current_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["last_sign_in_at", "2016-04-01 14:33:49.086036"], ["current_sign_in_at", "2016-04-01 14:33:49.086036"], ["last_sign_in_ip", "::1"], ["current_sign_in_ip", "::1"], ["sign_in_count", 1], ["updated_at", "2016-04-01 14:33:49.087508"], ["id", 4]]
+  [1m[35m (1.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 96ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/" for ::1 at 2016-04-01 14:33:49 -0300
+Processing by Painel::DashboardController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35mSale Load (0.2ms)[0m  SELECT  "sales".* FROM "sales"  ORDER BY id DESC LIMIT 10
+  [1m[36m (0.2ms)[0m  [1mSELECT SUM("sales"."price") FROM "sales" WHERE (created_at >= '2016-04-01')[0m
+  [1m[35m (0.2ms)[0m  SELECT SUM("sales"."price") FROM "sales" WHERE (created_at >= '2016-03-25 14:33:49.156271')
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "clients" LIMIT 10) subquery_for_count[0m
+  [1m[35mPayment Load (0.2ms)[0m  SELECT  "payments".* FROM "payments" WHERE "payments"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mClient Load (0.2ms)[0m  [1mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mPayment Load (0.1ms)[0m  SELECT  "payments".* FROM "payments" WHERE "payments"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "payments".* FROM "payments" WHERE "payments"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mClient Load (0.1ms)[0m  [1mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mPayment Load (0.1ms)[0m  SELECT  "payments".* FROM "payments" WHERE "payments"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "payments".* FROM "payments" WHERE "payments"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "payments".* FROM "payments" WHERE "payments"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "payments".* FROM "payments" WHERE "payments"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mClient Load (0.2ms)[0m  SELECT  "clients".* FROM "clients"  ORDER BY id DESC LIMIT 10
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  [1m[35mPayment Load (0.2ms)[0m  SELECT "payments".* FROM "payments"
+  [1m[36mClient Load (0.1ms)[0m  [1mSELECT "clients".* FROM "clients"[0m
+  Rendered painel/dashboard/index.html.erb within layouts/painel (78.3ms)
+  Rendered layouts/components/_header.html.erb (7.9ms)
+  Rendered layouts/components/_footer.html.erb (20.7ms)
+Completed 200 OK in 152ms (Views: 113.0ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/painel/products/new" for ::1 at 2016-04-01 14:34:04 -0300
+Processing by Painel::ProductsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 4]]
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered painel/products/new.html.erb within layouts/painel (3.2ms)
+  Rendered layouts/components/_header.html.erb (7.8ms)
+  Rendered layouts/components/_footer.html.erb (18.8ms)
+Completed 200 OK in 39ms (Views: 36.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/painel" for ::1 at 2016-04-01 14:34:24 -0300
+Processing by Painel::DashboardController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 4]]
+  [1m[36mSale Load (0.2ms)[0m  [1mSELECT  "sales".* FROM "sales"  ORDER BY id DESC LIMIT 10[0m
+  [1m[35m (0.2ms)[0m  SELECT SUM("sales"."price") FROM "sales" WHERE (created_at >= '2016-04-01')
+  [1m[36m (0.2ms)[0m  [1mSELECT SUM("sales"."price") FROM "sales" WHERE (created_at >= '2016-03-25 14:34:24.301923')[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "clients" LIMIT 10) subquery_for_count
+  [1m[36mPayment Load (0.1ms)[0m  [1mSELECT  "payments".* FROM "payments" WHERE "payments"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mClient Load (0.1ms)[0m  SELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mPayment Load (0.1ms)[0m  [1mSELECT  "payments".* FROM "payments" WHERE "payments"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "payments".* FROM "payments" WHERE "payments"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mClient Load (0.1ms)[0m  SELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mPayment Load (0.1ms)[0m  [1mSELECT  "payments".* FROM "payments" WHERE "payments"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "payments".* FROM "payments" WHERE "payments"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "payments".* FROM "payments" WHERE "payments"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "payments".* FROM "payments" WHERE "payments"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mClient Load (0.2ms)[0m  [1mSELECT  "clients".* FROM "clients"  ORDER BY id DESC LIMIT 10[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories"
+  [1m[36mPayment Load (0.1ms)[0m  [1mSELECT "payments".* FROM "payments"[0m
+  [1m[35mClient Load (0.2ms)[0m  SELECT "clients".* FROM "clients"
+  Rendered painel/dashboard/index.html.erb within layouts/painel (19.9ms)
+  Rendered layouts/components/_header.html.erb (6.3ms)
+  Rendered layouts/components/_footer.html.erb (16.8ms)
+Completed 200 OK in 54ms (Views: 47.4ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/painel" for ::1 at 2016-04-01 14:34:33 -0300
+Processing by Painel::DashboardController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35mSale Load (0.2ms)[0m  SELECT  "sales".* FROM "sales"  ORDER BY id DESC LIMIT 10
+  [1m[36m (0.1ms)[0m  [1mSELECT SUM("sales"."price") FROM "sales" WHERE (created_at >= '2016-04-01')[0m
+  [1m[35m (0.1ms)[0m  SELECT SUM("sales"."price") FROM "sales" WHERE (created_at >= '2016-03-25 14:34:33.272785')
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "clients" LIMIT 10) subquery_for_count[0m
+  [1m[35mPayment Load (0.1ms)[0m  SELECT  "payments".* FROM "payments" WHERE "payments"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mClient Load (0.1ms)[0m  [1mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mPayment Load (0.1ms)[0m  SELECT  "payments".* FROM "payments" WHERE "payments"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "payments".* FROM "payments" WHERE "payments"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mClient Load (0.1ms)[0m  [1mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mPayment Load (0.1ms)[0m  SELECT  "payments".* FROM "payments" WHERE "payments"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "payments".* FROM "payments" WHERE "payments"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "payments".* FROM "payments" WHERE "payments"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "payments".* FROM "payments" WHERE "payments"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mClient Load (0.2ms)[0m  SELECT  "clients".* FROM "clients"  ORDER BY id DESC LIMIT 10
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  [1m[35mPayment Load (0.4ms)[0m  SELECT "payments".* FROM "payments"
+  [1m[36mClient Load (0.2ms)[0m  [1mSELECT "clients".* FROM "clients"[0m
+  Rendered painel/dashboard/index.html.erb within layouts/painel (20.5ms)
+  Rendered layouts/components/_header.html.erb (7.0ms)
+  Rendered layouts/components/_footer.html.erb (18.5ms)
+Completed 200 OK in 55ms (Views: 49.7ms | ActiveRecord: 2.1ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_products_on_category_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_products_on_category_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_sales_on_employee_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_sales_on_employee_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_sales_on_client_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_sales_on_client_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_sales_on_payment_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_sales_on_payment_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 1]]
+  [1m[35mSale Load (0.2ms)[0m  SELECT "sales".* FROM "sales"
